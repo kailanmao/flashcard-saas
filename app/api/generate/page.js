@@ -12,6 +12,11 @@ import {
 export default function Generate() {
   const [text, setText] = useState('')
   const [flashcards, setFlashcards] = useState([])
+  const [setName, setSetName] = useState('')
+  const [dialogOpen, setDialogOpen] = useState(false)
+
+  const handleOpenDialog = () => setDialogOpen(true)
+  const handleCloseDialog = () => setDialogOpen(false)
 
   const handleSubmit = async () => {
     if (!text.trim()) {
@@ -63,28 +68,27 @@ export default function Generate() {
         </Button>
       </Box>
       
-      {/* We'll add flashcard display here */}
       {flashcards.length > 0 && (
-        <Box sx={{ mt: 4 }}>
-            <Typography variant="h5" component="h2" gutterBottom>
-            Generated Flashcards
-            </Typography>
-            <Grid container spacing={2}>
-            {flashcards.map((flashcard, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card>
-                    <CardContent>
-                    <Typography variant="h6">Front:</Typography>
-                    <Typography>{flashcard.front}</Typography>
-                    <Typography variant="h6" sx={{ mt: 2 }}>Back:</Typography>
-                    <Typography>{flashcard.back}</Typography>
-                    </CardContent>
-                </Card>
-                </Grid>
-            ))}
+      <Box sx={{ mt: 4 }}>
+        <Typography variant="h5" component="h2" gutterBottom>
+          Generated Flashcards
+        </Typography>
+        <Grid container spacing={2}>
+          {flashcards.map((flashcard, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6">Front:</Typography>
+                  <Typography>{flashcard.front}</Typography>
+                  <Typography variant="h6" sx={{ mt: 2 }}>Back:</Typography>
+                  <Typography>{flashcard.back}</Typography>
+                </CardContent>
+              </Card>
             </Grid>
-        </Box>
-)}
+          ))}
+        </Grid>
+      </Box>
+    )}
     </Container>
   )
 }
