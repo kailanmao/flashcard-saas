@@ -1,6 +1,6 @@
 'use client'
-import Image from "next/image";
-import getStripe from '@/utils/get-stripe';
+// import Image from "next/image";
+// import getStripe from '@/utils/get-stripe';
 import {SignedIn, SignedOut, UserButton} from '@clerk/nextjs';
 import { TextField, Box, Container, Typography, Head, AppBar, Toolbar, Button } from "@mui/material";
 
@@ -28,7 +28,7 @@ export default function Home() {
           Generate Flashcards
         </Button>
       </Box>
-      
+      <UserButton />
       {/* We'll add flashcard display here */}
     </Container>
 

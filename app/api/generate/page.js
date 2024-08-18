@@ -7,6 +7,9 @@ import {
   Button,
   Typography,
   Box,
+  Grid,
+  Card,
+  CardContent,
 } from '@mui/material'
 
 export default function Generate() {

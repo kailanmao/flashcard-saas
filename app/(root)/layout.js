@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import {
   ClerkProvider,
   SignInButton,
@@ -16,11 +16,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
+  return (<ClerkProvider>
     <html lang="en">
 
-      <ClerkProvider></ClerkProvider>
+      
       <body className={inter.className}>{children}</body>
     </html>
+    </ClerkProvider>
   );
 }
