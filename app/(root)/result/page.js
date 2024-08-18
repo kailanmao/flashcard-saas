@@ -76,3 +76,5 @@ const ResultPage = () => {
         </Container>
       )
   }
+
+export default ResultPage;

@@ -6,7 +6,15 @@ import {
   SignedIn,
   SignedOut,
   UserButton
+  
 } from '@clerk/nextjs'
+import {
+  AppBar,
+  Button,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 

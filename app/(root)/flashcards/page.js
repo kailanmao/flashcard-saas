@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useUser } from '@clerk/clerk-react'
 import { collection, doc, getDoc, setDoc } from 'firebase/firestore'
-import { db } from '@/lib/firebase'
+import { db } from "../../../firebase";
 import {
     Container,
     Grid,

@@ -15,8 +15,13 @@ import {
   DialogContentText,
   DialogTitle,
   Dialog,
+  AppBar,
+  Toolbar,
+  Link,
 } from '@mui/material'
 
+import {doc, collection, getDoc, writeBatch} from 'firebase/firestore'
+import { db } from "../../../firebase";
 export default function Generate() {
   const [text, setText] = useState('')
   const [flashcards, setFlashcards] = useState([])
@@ -56,7 +61,9 @@ export default function Generate() {
     }
   
     try {
+      console.log(doc)
       const userDocRef = doc(collection(db, 'users'), user.id)
+      
       const userDocSnap = await getDoc(userDocRef)
   
       const batch = writeBatch(db)
@@ -84,6 +91,7 @@ export default function Generate() {
   }
 
   return (
+    <>
     <Container maxWidth="md">
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
@@ -161,6 +169,6 @@ export default function Generate() {
     </Button>
   </DialogActions>
 </Dialog>
-    </Container>
+    </Container></>
   )
 }
